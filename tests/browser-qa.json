@@ -17,7 +17,6 @@
     "downloadDisabledUntilRecalculation": true,
     "ageAndCountExtrapolationWarningsDisplayed": true,
     "englishChineseSwitchVerified": true,
-    "citationSectionHiddenInEnglishAndChinese": true,
     "clearInputsResetsResultAfterFix": true,
     "resultDownloadVerified": true,
     "downloadedExampleProbability": 0.4065941348671913,
@@ -26,6 +25,12 @@
     "mobileViewport": {"width": 390, "height": 844},
     "mobileHorizontalOverflow": false,
     "temporaryViewportReset": true
+  },
+  "offlineCleanupCheck": {
+    "date": "2026-10-15",
+    "syntheticExampleDisplayedPercent": "40.7",
+    "citationSectionAbsent": true,
+    "chineseOfflinePrivacyTextVerified": true
   },
   "directFileOpening": {
     "tested": false,
