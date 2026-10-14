@@ -24,9 +24,11 @@ python -m http.server 8000 --bind 127.0.0.1
 
 Then open `http://127.0.0.1:8000`. Windows users can use `start-local.bat` after installing Python. The script only serves static files locally; no prediction backend is needed.
 
-## Online use
+## 中文使用说明
 
-The folder can be served unchanged by GitHub Pages. After upload, choose **Settings → Pages → Deploy from a branch → main → /(root)**. The eventual website and repository URLs will be added here after they actually exist. No public deployment has been performed yet.
+下载 ZIP 并解压整个文件夹，或克隆仓库，然后用浏览器打开 `index.html`。请保留同目录中的 `assets/` 和 `models/`，点击 **中文** 切换界面。完整填写 12 个预测变量，确认基线时无 ADL/IADL 功能受损，再计算风险。计算无需联网、安装软件包或运行预测服务器。
+
+如果浏览器限制本地脚本，可以在仓库目录运行上述 Python 本地静态服务器命令，再打开 `http://127.0.0.1:8000`；Windows 用户也可以运行 `start-local.bat`。变量测量及编码见 [变量字典](docs/predictor-dictionary.md)，适用范围与局限见 [模型说明](docs/model-card.md)。
 
 ## Scope
 
@@ -61,14 +63,11 @@ assets/                    Browser UI, validation, float32-aware inference, CSS
 models/ensemble.json        Canonical inference parameters (20 models)
 models/model-data.js        Same parameters, bundled for direct file opening
 models/metadata.json        Scope, version and provenance
-docs/                      Model card, predictor dictionary, validation, manuscript wording
+docs/                      Model card, predictor dictionary and validation
 examples/                  Synthetic inputs only
 tests/                     Synthetic Python reference outputs and Node verification
 scripts/                   Maintainer export and package-audit scripts
 start-local.bat            Optional local static serving on Windows
-README.zh-CN.md            Chinese instructions
-CITATION.cff.example       Citation template; author details pending
-LICENSE                    Licence status; selection pending
 SHA256SUMS.txt              Package file hashes
 ```
 
@@ -85,8 +84,7 @@ Model export is a maintainer operation requiring the authorized source artefact 
 
 ## Privacy and interpretation
 
-The prediction code contains no remote prediction calls, tracking scripts, external fonts or persistent browser storage. Inputs remain in page memory unless the user downloads a result. A website hosting provider may record access information separately. Exported model parameters contain no explicit PMM donor rows or survey participant identifiers; this is not a claim that any learned model has zero disclosure risk.
+The prediction code contains no remote prediction calls, tracking scripts, external fonts or persistent browser storage. Inputs remain in page memory unless the user downloads a result. Exported model parameters contain no explicit PMM donor rows or survey participant identifiers; this is not a claim that any learned model has zero disclosure risk.
 
 Missing measurements must not be guessed or substituted with zero to obtain a prediction. See [the predictor dictionary](docs/predictor-dictionary.md) for the correct scales and survey-specific definitions. This tool is for research reference and does not replace professional assessment.
 
-References: [XGBoost model IO](https://xgboost.readthedocs.io/en/stable/tutorials/saving_model.html); [GitHub Pages configuration](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site).
