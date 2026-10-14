@@ -1,0 +1,22 @@
+# Restricted artefacts must never be tracked, even by mistake.
+*.pkl
+*.pickle
+*.joblib
+*.dta
+*.sav
+*.parquet
+*.npz
+*.npy
+data/
+private_build/
+.venv/
+venv/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.log
+node_modules/
+functional-impairment-risk-result.json
+.DS_Store
+Thumbs.db

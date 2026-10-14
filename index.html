@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Complete-input research calculator for incident functional impairment in older Chinese adults with multimorbidity. Frozen CHARLS model; CLHLS external validation.">
+  <meta name="theme-color" content="#144e46">
+  <title>Functional Impairment Risk Calculator</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="models/model-data.js"></script>
+  <script defer src="assets/predictor.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#calculator" data-i18n="skip">Skip to calculator</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Functional Health home">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 18h6l3-9 5 16 3-7h5"/></svg></span>
+      <span><strong data-i18n="brand">Functional Health</strong><small data-i18n="brandSub">Research calculator</small></span>
+    </a>
+    <nav aria-label="Main navigation"><a href="#calculator" data-i18n="navCalculator">Calculator</a><a href="#model-notes" data-i18n="navNotes">Model notes</a><button id="language" type="button" aria-label="Switch to Chinese">中文</button></nav>
+  </header>
+  <main id="top">
+    <section class="hero">
+      <div class="eyebrow"><span></span><span data-i18n="eyebrow">CHARLS development · CLHLS external validation</span></div>
+      <h1 data-i18n="title">Functional impairment<br>risk calculator</h1>
+      <p class="hero-description" data-i18n="intro">Estimate incident ADL/IADL impairment at follow-up in older Chinese adults with multimorbidity. Enter all 12 predictors to apply the study’s frozen model.</p>
+      <div class="hero-bottom"><span class="pill" data-i18n="complete">Complete inputs required</span><span data-i18n="local">Calculation stays in your browser</span><span class="version">v1.0.0</span></div>
+    </section>
+    <div id="load-error" class="notice error" hidden role="alert"></div>
+    <div class="workspace" id="calculator">
+      <section class="input-panel" aria-labelledby="input-title">
+        <div class="panel-title"><div><span class="eyebrow" data-i18n="stepOne">01 / Enter predictors</span><h2 id="input-title" data-i18n="inputTitle">Participant information</h2></div><button class="text-button" id="example" type="button" data-i18n="example">Load a synthetic example ↗</button></div>
+        <p class="panel-intro" data-i18n="inputIntro">All fields are required. Scores must use the study’s definitions.</p>
+        <form id="risk-form" novalidate>
+          <fieldset><legend><span>01</span><span data-i18n="groupProfile">Participant profile</span></legend><div class="field-grid">
+            <div class="field"><label for="age" data-i18n="age">Age</label><div class="number-wrap"><input id="age" name="age" type="number" min="60" max="110" step="1" placeholder="70" required inputmode="numeric" aria-describedby="age-help"><span data-i18n="years">years</span></div><small id="age-help" data-i18n="ageHelp">60–110; development range 60–95</small></div>
+            <div class="field"><label for="sex" data-i18n="sex">Sex</label><select id="sex" name="sex" required><option value="" data-i18n="choose">Select…</option><option value="0" data-i18n="male">Male</option><option value="1" data-i18n="female">Female</option></select></div>
+            <div class="field"><label for="education" data-i18n="education">Education</label><select id="education" name="education" required><option value="" data-i18n="choose">Select…</option><option value="0" data-i18n="edu0">No formal education</option><option value="1" data-i18n="edu1">1–6 years</option><option value="2" data-i18n="edu2">7 or more years</option></select></div>
+            <div class="field"><label for="residence" data-i18n="residence">Residence</label><select id="residence" name="residence" required><option value="" data-i18n="choose">Select…</option><option value="0" data-i18n="urban">Urban</option><option value="1" data-i18n="rural">Rural</option></select></div>
+            <div class="field full"><label for="marital_status" data-i18n="marital">Marital status</label><select id="marital_status" name="marital_status" required><option value="" data-i18n="choose">Select…</option><option value="0" data-i18n="married">Married / partnered</option><option value="1" data-i18n="otherMarital">Other: widowed, divorced, separated or never married</option></select></div>
+          </div></fieldset>
+          <fieldset><legend><span>02</span><span data-i18n="groupHealth">Health and function</span></legend><div class="field-grid">
+            <div class="field full"><label for="mm_count" data-i18n="count">Number of chronic conditions</label><select id="mm_count" name="mm_count" required aria-describedby="count-help"><option value="" data-i18n="choose">Select…</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option></select><small id="count-help" data-i18n="countHelp">Count only hypertension, diabetes, heart disease, stroke, lung disease, cancer and arthritis.</small></div>
+            <div class="field"><label for="heart_disease" data-i18n="heart">Heart disease</label><select id="heart_disease" name="heart_disease" required><option value="" data-i18n="choose">Select…</option><option value="0" data-i18n="no">No</option><option value="1" data-i18n="yes">Yes</option></select><small data-i18n="heartHelp">Doctor-diagnosed; included in the count above</small></div>
+            <div class="field"><label for="self_rated_health" data-i18n="health">Self-rated health</label><select id="self_rated_health" name="self_rated_health" required><option value="" data-i18n="choose">Select…</option><option value="1" data-i18n="health1">1 · Excellent</option><option value="2" data-i18n="health2">2 · Very good</option><option value="3" data-i18n="health3">3 · Good</option><option value="4" data-i18n="health4">4 · Fair</option><option value="5" data-i18n="health5">5 · Poor</option></select><small data-i18n="healthHelp">Use the harmonized CHARLS 1–5 coding.</small></div>
+            <div class="field"><label for="mobility_impairment" data-i18n="mobility">Mobility impairment</label><select id="mobility_impairment" name="mobility_impairment" required><option value="" data-i18n="choose">Select…</option><option value="0" data-i18n="no">No</option><option value="1" data-i18n="yes">Yes</option></select><small data-i18n="mobilityHelp">Study-defined mobility limitation; see measurement guide</small></div>
+            <div class="field"><label for="exercise" data-i18n="exercise">Regular physical activity</label><select id="exercise" name="exercise" required><option value="" data-i18n="choose">Select…</option><option value="0" data-i18n="no">No</option><option value="1" data-i18n="yes">Yes</option></select><small data-i18n="exerciseHelp">Harmonized moderate / vigorous activity indicator</small></div>
+          </div></fieldset>
+          <fieldset><legend><span>03</span><span data-i18n="groupScores">Cognition and wellbeing</span></legend><div class="field-grid">
+            <div class="field"><label for="cog_score" data-i18n="cognition">Cognitive score</label><input id="cog_score" name="cog_score" type="number" min="0" max="1" step="any" placeholder="0.35" required inputmode="decimal" aria-describedby="cog-help"><small id="cog-help" data-i18n="cogHelp">0–1; CHARLS word recall score ÷ 20</small></div>
+            <div class="field"><label for="depression" data-i18n="depression">Depressive symptom score</label><input id="depression" name="depression" type="number" min="0" max="1" step="any" placeholder="0.40" required inputmode="decimal" aria-describedby="depression-help"><small id="depression-help" data-i18n="depHelp">0–1; CESD-10 score ÷ 30</small></div>
+          </div></fieldset>
+          <div class="eligibility"><label><input type="checkbox" id="eligible" required><span data-i18n="eligible">I confirm the participant had no ADL/IADL impairment at baseline.</span></label><p data-i18n="eligibleHelp">The model predicts new impairment. Baseline impairment falls outside its studied population.</p></div>
+          <div id="form-errors" class="notice error" role="alert" hidden></div>
+          <div class="form-actions"><button class="primary" type="submit" id="calculate"><span data-i18n="calculate">Calculate risk</span><span aria-hidden="true">→</span></button><button class="text-button" type="button" id="reset" data-i18n="reset">Clear inputs</button></div>
+        </form>
+      </section>
+      <aside class="result-column">
+        <section class="result-panel" aria-labelledby="result-title" aria-live="polite" aria-atomic="true">
+          <span class="eyebrow" data-i18n="stepTwo">02 / Model estimate</span><h2 id="result-title" data-i18n="resultTitle">Estimated risk</h2>
+          <div id="empty-result"><div class="empty-symbol" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="25"/><path d="M13 34h11l5-15 8 26 5-11h9"/></svg></div><p data-i18n="emptyTitle">Your estimate appears here</p><small data-i18n="emptyText">Complete the form and confirm baseline eligibility, then calculate.</small></div>
+          <div id="computed-result" hidden>
+            <div class="result-number"><strong id="probability">—</strong><span>%</span></div>
+            <p class="result-label" data-i18n="probabilityLabel">Predicted probability at study follow-up</p>
+            <div class="risk-track" aria-hidden="true"><span id="risk-fill"></span><i id="risk-marker"></i></div><div class="scale-labels"><span>0%</span><span>100%</span></div>
+            <div class="risk-category" id="risk-category"></div>
+            <p class="threshold-text" data-i18n="thresholdText">Binary study threshold: 30.3431%, derived from CHARLS bootstrap out-of-bag predictions.</p>
+            <p id="sample-notice" class="sample-notice" hidden data-i18n="sampleNotice">Synthetic example · not a real participant</p>
+            <p id="stale-notice" class="notice stale" hidden data-i18n="stale">Inputs have changed. Calculate again to update this estimate.</p>
+            <div id="prediction-warnings" class="notice" hidden></div>
+            <button type="button" class="secondary" id="download" data-i18n="download">Download this result</button>
+          </div>
+          <div class="result-footnote"><span class="small-icon" aria-hidden="true">↳</span><p data-i18n="researchOnly">For research use. A risk category is not a diagnosis or a treatment recommendation.</p></div>
+        </section>
+        <section class="context-panel"><h3 data-i18n="horizonTitle">Understanding the time window</h3><p data-i18n="horizon">Development follow-up had a median of 36 months; external validation, 49 months. This model does not estimate risk at a user-selected time horizon.</p><a href="#model-notes" data-i18n="readNotes">Read the model notes ↓</a></section>
+      </aside>
+    </div>
+    <section id="model-notes" class="model-notes">
+      <div class="notes-heading"><span class="eyebrow" data-i18n="aboutEyebrow">About the study</span><h2 data-i18n="aboutTitle">Evidence and interpretation</h2><p data-i18n="aboutIntro">A frozen model, independently validated. Read the scope before interpreting an individual estimate.</p></div>
+      <div class="evidence-grid"><div><small data-i18n="development">Development cohort</small><strong>1,878</strong><span>CHARLS 2015–2018</span></div><div><small data-i18n="validation">External validation cohort</small><strong>488</strong><span>CLHLS 2014–2018</span></div><div><small data-i18n="externalAuc">External AUC</small><strong>0.725</strong><span>95% CI 0.678–0.772</span></div></div>
+      <div class="details-list">
+        <details><summary data-i18n="measurementTitle">How should the predictors be measured?</summary><div class="details-body"><p data-i18n="measurementBody">Enter the study-coded values, not substituted scales. Cognition is CHARLS word recall (0–20) divided by 20; depressive symptoms are CESD-10 (0–30) divided by 30. Mobility and activity use harmonized survey definitions. See the full predictor dictionary for coding and cross-cohort differences.</p><a href="docs/predictor-dictionary.md" data-i18n="dictionaryLink">Predictor dictionary (Markdown)</a></div></details>
+        <details><summary data-i18n="outcomeTitle">What does functional impairment mean here?</summary><div class="details-body"><p data-i18n="outcomeBody">New impairment in any of six ADL domains (bathing, dressing, eating, transferring, toileting, continence) or in shopping/cooking IADL at follow-up. Participants were unimpaired at baseline, aged ≥60 in development and ≥65 in external validation, and had at least two of seven harmonized chronic conditions.</p></div></details>
+        <details><summary data-i18n="modelTitle">How is the estimate calculated?</summary><div class="details-body"><p data-i18n="modelBody">The page averages probabilities from 20 frozen StandardScaler–XGBoost pipelines trained on the study’s multiply imputed development datasets. All 12 inputs are required, so no new-input imputation is performed. Models, preprocessing and the threshold have not been retrained or reoptimized. This edition provides the probability and binary classification; it does not provide individual SHAP explanations.</p><p class="model-id">Model: mice_bootstrap_8model_2026-08-19 · Web: 1.0.0</p><a href="docs/model-card.md" data-i18n="modelCardLink">Model card (Markdown)</a></div></details>
+        <details><summary data-i18n="limitsTitle">What are the important limitations?</summary><div class="details-body"><p data-i18n="limitsBody">Follow-up windows and cognition measures differ across cohorts. Activity was substantially missing in development. Subgroup fairness and the impact of using the tool to guide care have not been established. Age above 95 or a count of 7 conditions extends beyond the observed development range. External calibration slope was 1.414, calibration-in-the-large 0.006, and Brier score 0.186.</p></div></details>
+        <details><summary data-i18n="privacyTitle">Can I use this offline, and where do my inputs go?</summary><div class="details-body"><p data-i18n="privacyBody">Download the complete repository folder and open index.html. The calculator uses bundled scripts and model parameters, without a prediction API, analytics or external fonts. Inputs remain in the current page’s memory unless you download a result. When used on GitHub Pages, the hosting provider may record ordinary website access information.</p></div></details>
+        <!-- Keep hidden until a verified citation is supplied; publication is not required to release the calculator. -->
+        <details id="publication-citation" hidden><summary data-i18n="citationTitle">How should I cite the tool?</summary><div class="details-body"><p data-i18n="citationBody">Citation details will be added when verified.</p></div></details>
+      </div>
+    </section>
+  </main>
+  <footer><div><strong data-i18n="brand">Functional Health</strong><span data-i18n="footer">Incident functional impairment · complete-input research tool</span></div><span>v1.0.0 · 2026</span></footer>
+  <noscript>This calculator requires JavaScript. Enable JavaScript and reload the page. 本工具需要启用 JavaScript。</noscript>
+</body>
+</html>

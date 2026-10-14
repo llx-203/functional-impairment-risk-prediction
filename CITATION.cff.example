@@ -1,0 +1,13 @@
+# Template only. Replace all placeholders before renaming to CITATION.cff.
+cff-version: 1.2.0
+message: "Please cite this calculator."
+type: software
+title: "Functional impairment risk calculator for older Chinese adults with multimorbidity"
+version: "1.0.0"
+authors:
+  - family-names: "AUTHOR_FAMILY_NAME_TO_COMPLETE"
+    given-names: "AUTHOR_GIVEN_NAMES_TO_COMPLETE"
+# A software citation can be provided before the paper is accepted/published.
+# Add verified repository-code and actual release date when available.
+# ORCID, a software DOI and preferred-citation for a published article are optional.
+# No DOI or public URL has been assigned yet. Do not invent them.
