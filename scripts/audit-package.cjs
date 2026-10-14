@@ -20,7 +20,7 @@ for(const file of ['assets/app.js','assets/predictor.js']) {
 }
 const refs=JSON.parse(fs.readFileSync(path.join(root,'tests/reference-cases.json'),'utf8'));
 assert(refs.every(r=>/^SYN_\d+$/.test(r.id)),'Non-synthetic identifier found.');
-const results = {date:'2026-10-14',restrictedFilesAbsent:true,localAssetsPresent:true,noPredictionNetworkOrPersistentStorage:true,referenceIdentifiersSynthetic:true,result:'PASS'};
+const results = {date:new Date().toISOString().slice(0,10),restrictedFilesAbsent:true,localAssetsPresent:true,noPredictionNetworkOrPersistentStorage:true,referenceIdentifiersSynthetic:true,result:'PASS'};
 fs.writeFileSync(path.join(root,'tests/package-audit.json'),JSON.stringify(results,null,2)+'\n');
 const tracked=walk(root).filter(p=>path.basename(p)!=='SHA256SUMS.txt').sort((a,b)=>a.localeCompare(b,'en'));
 const lines=tracked.map(p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex')+'  '+path.relative(root,p).split(path.sep).join('/'));
