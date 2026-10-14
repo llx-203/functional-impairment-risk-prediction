@@ -1,0 +1,4 @@
+age,sex,mm_count,mobility_impairment,cog_score,exercise,education,residence,depression,heart_disease,self_rated_health,marital_status
+103.0,0.0,2.0,1.0,0.4672684011434851,0.0,1.0,1.0,0.790518245853265,0.0,4.0,1.0
+70,1,3,1,0.35,1,1,1,0.4,1,4,0
+60.0,0.0,2.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
