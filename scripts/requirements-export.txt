@@ -1,0 +1,10 @@
+# Maintainer-only environment; never required by calculator users.
+numpy==2.4.6
+pandas==3.0.3
+scikit-learn==1.9.0
+xgboost==3.3.0
+miceforest==6.0.5
+lightgbm==4.6.0
+joblib==1.5.3
+scipy==1.18.0
+pyarrow==24.0.0
