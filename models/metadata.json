@@ -1,0 +1,45 @@
+{
+  "tool_version": "1.0.0",
+  "prepared_date": "2026-10-14",
+  "model_version": "mice_bootstrap_8model_2026-08-19",
+  "source_model_sha256": "3b4c6be08608e9d5ba1138c08eb0da1ea7f46dcc476fe4ccfe94bec54b9757b6",
+  "input_mode": "all_12_predictors_observed",
+  "missing_input_handling": "rejected",
+  "predictor_order": [
+    "age",
+    "sex",
+    "mm_count",
+    "mobility_impairment",
+    "cog_score",
+    "exercise",
+    "education",
+    "residence",
+    "depression",
+    "heart_disease",
+    "self_rated_health",
+    "marital_status"
+  ],
+  "model_count": 20,
+  "tree_count": 4000,
+  "probability_aggregation": "mean_of_20_probabilities",
+  "cutoff": 0.3034314632454784,
+  "cutoff_source": "Youden index maximised on the pooled bootstrap out-of-bag predictions of the selected model",
+  "development_cohort": {
+    "name": "CHARLS 2015-2018",
+    "n": 1878,
+    "events": 561,
+    "median_followup_months": 36
+  },
+  "external_validation_cohort": {
+    "name": "CLHLS 2014-2018",
+    "n": 488,
+    "events": 148,
+    "median_followup_months": 49
+  },
+  "outcome": "incident ADL (six domains) or shopping/cooking IADL impairment at study follow-up",
+  "individual_shap_available": false,
+  "authors": null,
+  "license": null,
+  "repository_url": "https://github.com/llx-203/functional-impairment-risk-prediction",
+  "online_calculator_url": null
+}
