@@ -83,14 +83,6 @@ node scripts/audit-package.cjs
 
 Model export is a maintainer operation requiring the authorized source artefact and its Python environment. `scripts/export_frozen_model.py` only emits an explicitly allowed inference schema and synthetic test records. It is not part of reader setup. See `scripts/requirements-export.txt`.
 
-## Citation and release status
-
-The working title of the associated manuscript is **Machine learning prediction of incident functional impairment in older Chinese adults with multimorbidity: development and external validation in two national cohorts**. It has not yet been submitted; there is no published article citation or article DOI. The calculator's citation section is hidden until verified information is available.
-
-The calculator and its public repository can be released before the article is accepted or published. Repository and Pages URLs are assigned when those resources are created and do not depend on journal acceptance. A software citation may identify this tool independently of the article; the verified article citation can be added later. `CITATION.cff.example` is a maintainer template, intentionally not an active citation file. Author attribution and the software licence should be confirmed for public release; an article DOI and ORCID are not prerequisites.
-
-This folder is a local repository candidate, version **1.0.0**, prepared on 14 October 2026. Before public upload, complete [the brief release checklist](docs/release-checklist.md). A GitHub URL, software DOI or clinical certification is not implied by this folder.
-
 ## Privacy and interpretation
 
 The prediction code contains no remote prediction calls, tracking scripts, external fonts or persistent browser storage. Inputs remain in page memory unless the user downloads a result. A website hosting provider may record access information separately. Exported model parameters contain no explicit PMM donor rows or survey participant identifiers; this is not a claim that any learned model has zero disclosure risk.
