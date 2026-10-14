@@ -38,8 +38,5 @@
   },
   "outcome": "incident ADL (six domains) or shopping/cooking IADL impairment at study follow-up",
   "individual_shap_available": false,
-  "authors": null,
-  "license": null,
-  "repository_url": "https://github.com/llx-203/functional-impairment-risk-prediction",
-  "online_calculator_url": null
+  "repository_url": "https://github.com/llx-203/functional-impairment-risk-prediction"
 }
