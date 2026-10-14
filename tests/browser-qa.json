@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-14",
+  "browser": "Codex in-app browser",
+  "entryPoint": "http://127.0.0.1:8765/",
+  "httpStatus": 200,
+  "checks": {
+    "syntheticExampleDisplayedPercent": "40.7",
+    "age82DisplayedPercent": "58.6",
+    "age110Count7DisplayedPercent": "59.5",
+    "lowRiskSyntheticDisplayedPercent": "26.9",
+    "bothRiskCategoriesVerified": true,
+    "displayMatchesIndependentPythonUiReferences": true,
+    "missingInputRejected": true,
+    "age59Rejected": true,
+    "baselineEligibilityRequired": true,
+    "changedInputsMarkResultStale": true,
+    "downloadDisabledUntilRecalculation": true,
+    "ageAndCountExtrapolationWarningsDisplayed": true,
+    "englishChineseSwitchVerified": true,
+    "citationSectionHiddenInEnglishAndChinese": true,
+    "clearInputsResetsResultAfterFix": true,
+    "resultDownloadVerified": true,
+    "downloadedExampleProbability": 0.4065941348671913,
+    "downloadVsIndependentPythonAbsoluteDifference": 2.682209016002801e-8,
+    "desktopLayoutVisuallyInspected": true,
+    "mobileViewport": {"width": 390, "height": 844},
+    "mobileHorizontalOverflow": false,
+    "temporaryViewportReset": true
+  },
+  "directFileOpening": {
+    "tested": false,
+    "reason": "Automation browser URL policy prohibits file:// navigation. No bypass attempted.",
+    "implementation": "Ordinary local script tags with bundled model-data.js; no fetch or ES module loading. Canonical bundle equality is separately verified."
+  },
+  "networkAndStorage": "Source/package audit found no prediction requests, analytics or persistent input storage. No claim of independently captured network traffic is made.",
+  "result": "PASS for tested HTTP interface; direct file opening unverified by browser automation"
+}

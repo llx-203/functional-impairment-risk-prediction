@@ -1,0 +1,62 @@
+[
+  {
+    "id": "SYN_UI_0",
+    "values": {
+      "age": 70,
+      "sex": 1,
+      "mm_count": 3,
+      "mobility_impairment": 1,
+      "cog_score": 0.35,
+      "exercise": 1,
+      "education": 1,
+      "residence": 1,
+      "depression": 0.4,
+      "heart_disease": 1,
+      "self_rated_health": 4,
+      "marital_status": 0
+    },
+    "expectedProbability": 0.4065941616892815,
+    "expectedDisplayPercent": "40.7",
+    "expectedHighRisk": true
+  },
+  {
+    "id": "SYN_UI_1",
+    "values": {
+      "age": 82,
+      "sex": 1,
+      "mm_count": 3,
+      "mobility_impairment": 1,
+      "cog_score": 0.35,
+      "exercise": 1,
+      "education": 1,
+      "residence": 1,
+      "depression": 0.4,
+      "heart_disease": 1,
+      "self_rated_health": 4,
+      "marital_status": 0
+    },
+    "expectedProbability": 0.5860458850860596,
+    "expectedDisplayPercent": "58.6",
+    "expectedHighRisk": true
+  },
+  {
+    "id": "SYN_UI_2",
+    "values": {
+      "age": 110,
+      "sex": 1,
+      "mm_count": 7,
+      "mobility_impairment": 1,
+      "cog_score": 0.35,
+      "exercise": 1,
+      "education": 1,
+      "residence": 1,
+      "depression": 0.4,
+      "heart_disease": 1,
+      "self_rated_health": 4,
+      "marital_status": 0
+    },
+    "expectedProbability": 0.5947480142116547,
+    "expectedDisplayPercent": "59.5",
+    "expectedHighRisk": true
+  }
+]

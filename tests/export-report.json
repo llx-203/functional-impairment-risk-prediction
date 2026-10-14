@@ -1,0 +1,52 @@
+{
+  "inspectionDate": "2026-10-14",
+  "sourceModelSha256": "3b4c6be08608e9d5ba1138c08eb0da1ea7f46dcc476fe4ccfe94bec54b9757b6",
+  "sourceModelBytes": 494977938,
+  "modelCount": 20,
+  "treeCount": 4000,
+  "syntheticCaseCount": 3587,
+  "completeInputOriginalVsBypassMaxDifference": 0.0,
+  "noTrainingOrRetuning": true,
+  "exportedKeys": [
+    "schemaVersion",
+    "toolVersion",
+    "modelVersion",
+    "sourceSha256",
+    "predictorOrder",
+    "cutoff",
+    "aggregation",
+    "completeInputsOnly",
+    "models"
+  ],
+  "perModelExportedKeys": [
+    "mean",
+    "scale",
+    "baseMargin",
+    "trees"
+  ],
+  "perTreeExportedKeys": [
+    "left",
+    "right",
+    "feature",
+    "value"
+  ],
+  "excluded": [
+    "MICE kernel",
+    "PMM donor rows",
+    "training matrices",
+    "participant identifiers",
+    "individual survey predictions",
+    "tree cover/hessian statistics"
+  ],
+  "referenceMethod": "original webtool utils.predictor.predict_matrix using the frozen kernel and all 20 pipelines",
+  "pythonVersion": "3.12.14",
+  "packages": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "scikit-learn": "1.9.0",
+    "xgboost": "3.3.0",
+    "miceforest": "6.0.5",
+    "lightgbm": "4.6.0",
+    "scipy": "1.18.0"
+  }
+}

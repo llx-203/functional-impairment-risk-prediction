@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-14",
+  "syntheticCaseCount": 3587,
+  "maxAbsoluteProbabilityDifference": 3.427267075695184e-8,
+  "maxPerModelDifference": 8.940696716308594e-8,
+  "riskClassMismatches": 0,
+  "minimumReferenceDistanceToCutoff": 0.00008384883013651256,
+  "tolerance": 0.000001,
+  "invalidInputChecks": 96,
+  "thresholdBoundaryChecks": 3,
+  "offlineScriptMatchesCanonicalModel": true,
+  "exportSchemaContainsOnlyInferenceParameters": true,
+  "result": "PASS"
+}
